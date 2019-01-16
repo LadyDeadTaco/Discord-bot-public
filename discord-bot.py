@@ -12,7 +12,7 @@ async def on_ready():
     print("The Bot Is Ready")
     await client.change_presence(game=discord.Game(name="Type Halp for more Infor"))
 
-images = 'https://imgur.com/puv8KUX', 'https://imgur.com/vtjx54A', 'https://imgur.com/0IXjXVN', 'https://imgur.com/yxY83CG', 'https://imgur.com/8d3ynyk' ,'https://imgur.com/BEEzk2v' , 'https://imgur.com/jtGQXpt' , 'https://imgur.com/fzCLu7j', 'https://imgur.com/gejV1Zt' , 'https://imgur.com/EGyAcOp', 'https://imgur.com/NLWTUMN'
+images = ['https://imgur.com/puv8KUX', 'https://imgur.com/vtjx54A', 'https://imgur.com/0IXjXVN', 'https://imgur.com/yxY83CG', 'https://imgur.com/8d3ynyk' ,'https://imgur.com/BEEzk2v' , 'https://imgur.com/jtGQXpt' , 'https://imgur.com/fzCLu7j', 'https://imgur.com/gejV1Zt' , 'https://imgur.com/EGyAcOp', 'https://imgur.com/NLWTUMN']
 
 
 
