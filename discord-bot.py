@@ -3,7 +3,6 @@ import random
 import urbandictionary as ud
 
 client = discord.Client()
-emb = discord.Embed()
 
 TOKEN = 'Your Token Goes Here'
 
@@ -33,36 +32,40 @@ async def on_message(message):
     if message.content.lower() == "no u":
         await message.channel.send("no me " + message.author.mention)
 
-    if message.content.lower().startswith("img"):
-        emb.title = "Here is Random Image. Enjoy"
-        emb.set_image(url = random.choice(images).replace("imgur.com", "i.imgur.com")+".jpg")
-        await message.channel.send(embed=emb)
+    if message.content.lower() == "img":
+        emb1 = discord.Embed()
+        emb1.title = "Here is Random Image. Enjoy"
+        emb1.set_image(url = random.choice(images).replace("imgur.com", "i.imgur.com")+".jpg")
+        await message.channel.send(embed=emb1)
 
     if message.content.lower().startswith("halp"):
-        emb.title = ('**__All available Commands__**')
-        emb.description = ('Use Halp for Help\nHi and Hello to say hey\nImg to get a random image\nurb to search Urbandictionary. Urb for an random one, or add a term and search for it.')
-        await message.channel.send(embed=emb)
+        emb2 = discord.Embed()
+        emb2.title = ('**__All available Commands__**')
+        emb2.description = ('Use Halp for Help\nHi and Hello to say hey\nImg to get a random image\nurb to search Urbandictionary. Urb for an random one, or add a term and search for it.')
+        await message.channel.send(embed=emb2)
 
-    if message.content.lower()== "urb":
+    if message.content.lower().startswith("rand"):
+        emb3 = discord.Embed()
         r = ud.random()
-        emb.title = r[0].word
-        emb.description = r[0].definition
-        await message.channel.send(embed=emb)
+        emb3.title = r[0].word
+        emb3.description = r[0].definition
+        await message.channel.send(embed=emb3)
+
 
     if message.content.lower().startswith("urbkef"):
+        emb4 = discord.Embed()
         f = ud.define('kef')
-        emb.title = f[0].word
-        emb.description = f[0].definition
-        await message.channel.send(embed=emb)
+        emb4.title = f[0].word
+        emb4.description = f[0].definition
+        await message.channel.send(embed=emb4)
 
     if message.content.lower().startswith("urb"):
+        emb5 = discord.Embed()
         args = message.content.lower().split(" ", 1)
         d = ud.define(args[1])
-        emb.title = d[0].word
-        emb.description = d[0].definition
-        await message.channel.send(embed=emb)
+        emb5.title = d[0].word
+        emb5.description = d[0].definition
+        await message.channel.send(embed=emb5)
 
 
 client.run(TOKEN)
-
-
