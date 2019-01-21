@@ -4,7 +4,10 @@ import urbandictionary as ud
 
 client = discord.Client()
 
-TOKEN = 'Your Token Goes Here'
+
+TOKEN = 'Token Goes Here'
+#You get it by creating an application at 'https://discordapp.com/developers/applications/' and then making it into a bot account.
+#When that is done, you get a token that you use here.
 
 @client.event
 async def on_ready():
@@ -12,7 +15,6 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name="Type Halp for more Info"))
 
 images = ['https://imgur.com/puv8KUX', 'https://imgur.com/vtjx54A', 'https://imgur.com/0IXjXVN', 'https://imgur.com/yxY83CG', 'https://imgur.com/8d3ynyk' ,'https://imgur.com/BEEzk2v' , 'https://imgur.com/jtGQXpt' , 'https://imgur.com/fzCLu7j', 'https://imgur.com/gejV1Zt' , 'https://imgur.com/EGyAcOp', 'https://imgur.com/NLWTUMN']
-
 
 
 @client.event
@@ -66,6 +68,8 @@ async def on_message(message):
         emb5.title = d[0].word
         emb5.description = d[0].definition
         await message.channel.send(embed=emb5)
+            
 
 
 client.run(TOKEN)
+
